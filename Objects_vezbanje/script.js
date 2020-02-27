@@ -233,3 +233,4 @@ poslednjiNajviseMerenja(merenjaDani);
 
 
 console.log("Test poruka");
+console.log("Druga test poruka");
