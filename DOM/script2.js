@@ -120,7 +120,6 @@ sviPar.forEach((elem, i) =>{
 
 });
 par.classList.add("error") // Dodeljivanje klase paragrafu
-par.c
 
 sviPar.forEach((elem, i) =>{ 
     if (i % 2 == 0){
@@ -132,6 +131,7 @@ sviPar.forEach((elem, i) =>{
     
 
 });
+
 sviPar.forEach((elem, i) =>{ 
     if (i % 3 == 0){
         elem.style.fontSize = "15px";
@@ -171,6 +171,49 @@ sviPar.forEach(elem =>{
 });
 
 console.log(sviPar);
+
+
+
+//Dodati novi div tag dokumentu
+let div2 = document.createElement("div2");
+div2.innerText = "Pridodati div";
+document.body.appendChild(div2);
+
+// Formiratu ul listu sa stavkama ciji je sadrzaj proizvoljan tekst i dodati je div elementu
+let lista1 = document.createElement("ul");
+let li1 = document.createElement("li");
+li1.innerText = "Prvi item";
+
+let li2 = document.createElement("li");
+li2.innerText = "Drugi item";
+
+let li3 = document.createElement("li");
+li3.innerText = "Treci item";
+
+let divLista = document.getElementById("lista");
+divLista.appendChild(lista1);
+lista1.appendChild(li1);
+lista1.appendChild(li2);
+lista1.appendChild(li3);
+/*
+// Brisanje prvog elementa
+// 1. Nacin
+//lista1.removeChild(lista1.firstChild);
+// 2. Nacin
+lista1.removeChild(lista1.childNodes[0]);
+// Brisanje poslednjeg elementa iz liste:
+lista1.removeChild(lista1.lastChild);
+
+*/
+let liPom = document.createElement("li");
+liPom.innerText = "***"
+
+// Zameniti drugu stavku liste
+lista1.replaceChild(liPom, lista1.childNodes[1]);
+
+
+
+
 
 
 
