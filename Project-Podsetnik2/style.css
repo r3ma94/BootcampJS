@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-size: 22px;
+}
+h1 {
+    margin-left: 50px;
+    color: dodgerblue;
+   
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    background-color: lightblue;
+    width: 350px;    
+    text-align: center;
+    border: 2px dotted blue;
+    user-select: none;
+}
+
+li:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+}

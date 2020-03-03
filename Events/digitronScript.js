@@ -1,37 +1,36 @@
-let buttonOne = document.getElementById("one");
-let buttonTwo = document.getElementById("two");
-let buttonPlus = document.getElementById("plus");
-let buttonEquals = document.getElementById("equals");
+let calcNumbers = document.querySelectorAll(".calcNum")
+let calcOps = document.querySelectorAll(".calcOp");
 
 let x = 0;
 let y = 0;
 let z = 0;
 let op = "";
-buttonOne.addEventListener("click", () => {
-    if (x == 0){
-        x = 1;
-    }
-    else {
-        y = 1;
-    }
+
+calcNumbers.forEach(elem => {
+    elem.addEventListener("click",()=>{
+        if(x == 0) {
+            x = elem.textContent;
+            
+        }
+        else {
+            y = elem.textContent;
+            
+        }
+    });
     
 });
 
-buttonTwo.addEventListener("click", () => {
-    if (x == 0){
-        y = 2;
-    }
-    else {
-        y = 2;
-    }
+calcOps.forEach(elem =>{
+    elem.addEventListener("click",() => {
+        op = elem.textContent;
+    });
 });
 
-buttonPlus.addEventListener("click", () => {
-    op = "+";
-    
-});
 
+let buttonEquals = document.getElementById("equals");
 buttonEquals.addEventListener("click", () => {
+    x = parseInt(x);
+    y = parseInt(y);
     switch(op){
         case "+":
             z = x + y;
@@ -50,6 +49,9 @@ buttonEquals.addEventListener("click", () => {
     }
     let resultP = document.getElementById("result");
     resultP.innerText = z;
+    x = 0;
+    y = 0;
+    z = 0;
 });
 
 
