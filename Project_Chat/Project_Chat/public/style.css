@@ -1,0 +1,137 @@
+body {
+    text-align: center;
+    color: purple;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #DDDDDD;
+
+}
+
+.btn {
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    background-color: purple;
+    color: white;
+    border: 0;
+    border-radius: 50px;
+}
+
+.btn:hover {
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+
+form {
+    margin: 15px;
+}
+
+input {
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 3px solid purple;
+}
+
+input:focus, .btn:focus {
+    outline-width: 0;
+}
+
+.username {
+    font-weight: bold;
+
+}
+
+.date {
+    color: grey;
+}
+
+#ulMessages {
+    list-style-type: none;
+    font-size: 20px;
+
+    /* Pozicioniramo ispod top sekcije */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 20%;
+    overflow: auto;
+    
+    /* Text poravnamo levo */
+    text-align: left;
+    width: 700px;
+    margin: 0 auto;
+
+    overflow-y: auto;
+    /* Prelom reci bez razmaka u chat-u */
+    word-wrap: break-word;
+    
+}
+
+#ulMessages>li{
+    width: 30%;
+    background-color: thistle;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    padding: 20px;
+    border-bottom: silver 1px solid;
+    border-radius: 0 20px 20px 20px;
+
+}
+
+.me {
+    margin-left: auto;
+    background-color: wheat !important;
+    border-radius: 20px 0 20px 20px !important;
+}
+
+
+
+/* Krijemo scroll bar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#top {
+    position: absolute;
+    height: 25%;
+    
+    /* Postavljamo centralno */
+    left: 0;
+    right: 0;
+    top: 0;
+    
+    overflow: hidden;
+}
+
+#bottom {
+    position: absolute;
+    height: 20%;
+
+    /* Postavljamo centralno */
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+}
+
+#divUpdatedUsername{
+    font-size: 22px;
+}
+
+#spanNewUsername{
+    font-weight: bold;
+}
+
+.btn-selected{
+    background-color: #5D3057;
+    color: bisque;
+}
