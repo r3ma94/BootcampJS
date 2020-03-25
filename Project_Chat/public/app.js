@@ -71,6 +71,14 @@ formMessage.addEventListener("submit", e => {
     .catch(error => {
         console.error(error);
     });
+    //Izbrisati sve poruke sa stanice
+    chatui.clear();
+
+    //Učitati poruke za promenjenu sobu
+    chatroom.getChats( data => {
+        //console.log(data); //u konzoli
+        chatui.templateLI(data);
+    });
     
 });
 
@@ -83,25 +91,22 @@ formUsername.addEventListener("submit", e => {
     if(patternUsername.test(newUsername)){
         chatroom.updateUsername(newUsername);
         formUsername.reset();
+        updatedUsername.innerHTML = `Your username was updated to <span id="spanNewUsername">${newUsername}</span>`;
+        setTimeout( () =>{
+        updatedUsername.innerHTML = ``;
+    }, 3000);
     }
     else {
         alert("Invalid username!");
+        updatedUsername.innerHTML = `Invalid username!`;
     }
     
-
     // Osveziti chat prilikom promene korisnickog imena tako sto ga izbrisemo i ucitamo ponovo
     chatui.clear();
     chatroom.getChats(data =>{
         chatui.templateLI(data);
     });
-
-
-    // Kada je update ime prikazati poruku u trajanju od 3s
-    updatedUsername.innerHTML = `Your username was updated to <span id="spanNewUsername">${newUsername}</span>`;
-    setTimeout( () =>{
-        updatedUsername.innerHTML = ``;
-    }, 3000);
-    
+   
 });
 
 // Promena sobe
